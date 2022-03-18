@@ -8,6 +8,7 @@ import ParallelQueriesPage from "./components/ParallelQueries.page";
 import DynamicParallelPage from "./components/DynamicParallel.page";
 import DependentQueriesPage from "./components/DependentQueries.page";
 import PaginatedQueriesPage from "./components/PaginatedQueries.page";
+import InfiniteQueriesPage from "./components/InfiniteQueries.page";
 
 function App() {
     return (
@@ -31,7 +32,10 @@ function App() {
                             <Link to='/dependent'>Dependent Queries</Link>
                         </li>
                         <li>
-                            <Link to='/paginate-colors'>Pagination Colors</Link>
+                            <Link to='/pagination'>Pagination Colors</Link>
+                        </li>
+                        <li>
+                            <Link to='/infinite'>Infinite Colors</Link>
                         </li>
                     </ul>
                 </nav>
@@ -55,8 +59,11 @@ function App() {
                     <Route exact path="/dependent">
                         <DependentQueriesPage email="ali@gmail.com"/>
                     </Route>
-                    <Route exact path="/paginate-colors">
+                    <Route exact path="/pagination">
                         <PaginatedQueriesPage />
+                    </Route>
+                    <Route exact path="/infinite">
+                        <InfiniteQueriesPage />
                     </Route>
                 </Switch>
             </div>
