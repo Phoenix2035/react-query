@@ -9,9 +9,6 @@ const fetchCoursesByChannelID = async (channelId) => {
     return await axios.get(`http://localhost:4000/channels/${channelId}`)
 }
 
-const spaceBetweenWord = word => {
-    return word.join(' - ')
-}
 
 const DependentQueriesPage = ({email}) => {
     const {data: user} = useQuery(["user", email], () => fetchUserByEmail(email))
@@ -32,7 +29,7 @@ const DependentQueriesPage = ({email}) => {
             <div>
                 <span>Courses: </span>
                 {
-                    spaceBetweenWord(courses?.data.courses)
+                    courses?.data.courses.join(" - ")
                 }
 
             </div>

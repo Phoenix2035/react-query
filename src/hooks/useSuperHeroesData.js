@@ -7,6 +7,8 @@ const fetchSuperHeroes = async () => {
 }
 
 const useSuperHeroesData = (onSuccess, onError) => {
+
+
     return useQuery("superHeroes", fetchSuperHeroes, {
         // cacheTime:2000
         // staleTime:Infinity
@@ -15,7 +17,7 @@ const useSuperHeroesData = (onSuccess, onError) => {
         // refetchIntervalInBackground:true => hata age taraf to browser nabashe bazam refetch mikone
         enabled: false, // when component mount, not fetch any data related to this url
         onSuccess,
-        onError
+        onError,
     })
 };
 
