@@ -1,12 +1,12 @@
 import {useQuery} from "react-query";
-import axios from "axios";
+import {request} from "../api/axios.interceptor";
 
 const fetchUserByEmail = async (email) => {
-    return await axios.get(`http://localhost:4000/users/${email}`)
+    return await request({url: `/users/${email}`})
 }
 
 const fetchCoursesByChannelID = async (channelId) => {
-    return await axios.get(`http://localhost:4000/channels/${channelId}`)
+    return await request({url: `/channels/${channelId}`})
 }
 
 

@@ -2,7 +2,7 @@ import {useParams} from "react-router-dom";
 
 import useSuperHeroDetailData from "../hooks/useSuperHeroDetailData";
 
-const RqSuperHeroDetailPage = () => {
+const SuperHeroDetailPage = () => {
     const {heroId} = useParams()
 
     const {data, isLoading, isError, error} = useSuperHeroDetailData(heroId)
@@ -17,4 +17,4 @@ const RqSuperHeroDetailPage = () => {
     );
 };
 
-export default RqSuperHeroDetailPage;
+export default SuperHeroDetailPage;

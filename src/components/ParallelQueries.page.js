@@ -1,17 +1,20 @@
 import {useQuery} from "react-query";
-import axios from "axios";
+import {request} from "../api/axios.interceptor";
 
 const fetchSuperHeroes = async () => {
-    return await axios.get(`http://localhost:4000/superheroes`)
+    return await request({url: "/superheroes"})
 }
 
 const fetchFriends = async () => {
-    return await axios.get(`http://localhost:4000/friends`)
+    return await request({url: "/friends"})
 }
 
 const ParallelQueriesPage = () => {
     const {data: superHeroes} = useQuery("super-heroes", fetchSuperHeroes)
     const {data: friends} = useQuery("friends", fetchFriends)
+
+    console.log({superHeroes})
+    console.log({friends})
 
 
     return (

@@ -1,9 +1,9 @@
 import {Fragment} from "react";
 import {useInfiniteQuery} from "react-query";
-import axios from "axios";
+import {request} from "../api/axios.interceptor";
 
 const fetchColors = async ({pageParam = 1}) => {
-    return await axios.get(`http://localhost:4000/colors?_limit=2&_page=${pageParam}`)
+    return await request({url: `/colors?_limit=2&_page=${pageParam}`})
 }
 
 

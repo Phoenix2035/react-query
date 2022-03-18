@@ -1,9 +1,8 @@
 import {useQueries} from "react-query";
-import axios from "axios";
-
+import {request} from "../api/axios.interceptor";
 
 const fetchSuperHeroes = async (heroId) => {
-    return await axios.get(`http://localhost:4000/superheroes/${heroId}`)
+    return await request({url: `/superheroes/${heroId}`})
 }
 
 const DynamicParallelPage = ({heroIds}) => {

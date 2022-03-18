@@ -1,9 +1,9 @@
 import {useState} from "react";
 import {useQuery} from "react-query";
-import axios from "axios";
+import {request} from "../api/axios.interceptor";
 
 const fetchColors = async (page) => {
-    return await axios.get(`http://localhost:4000/colors?_limit=2&_page=${page}`)
+    return await request({url: `/colors?_limit=2&_page=${page}`})
 }
 
 const PaginatedQueriesPage = () => {

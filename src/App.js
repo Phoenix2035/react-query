@@ -2,8 +2,8 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 
 import './App.css'
 import {HomePage} from './components/Home.page'
-import {RQSuperHeroesPage} from './components/RQSuperHeroes.page'
-import RqSuperHeroDetailPage from "./components/RQSuperHeroDetail.page";
+import {SuperHeroesPage} from './components/SuperHeroes.page'
+import SuperHeroDetailPage from "./components/SuperHeroDetail.page";
 import ParallelQueriesPage from "./components/ParallelQueries.page";
 import DynamicParallelPage from "./components/DynamicParallel.page";
 import DependentQueriesPage from "./components/DependentQueries.page";
@@ -45,10 +45,10 @@ function App() {
                         <HomePage/>
                     </Route>
                     <Route exact path='/super-heroes'>
-                        <RQSuperHeroesPage/>
+                        <SuperHeroesPage/>
                     </Route>
                     <Route exact path="/super-heroes/:heroId">
-                        <RqSuperHeroDetailPage/>
+                        <SuperHeroDetailPage/>
                     </Route>
                     <Route exact path="/parallel">
                         <ParallelQueriesPage/>
@@ -60,10 +60,10 @@ function App() {
                         <DependentQueriesPage email="ali@gmail.com"/>
                     </Route>
                     <Route exact path="/pagination">
-                        <PaginatedQueriesPage />
+                        <PaginatedQueriesPage/>
                     </Route>
                     <Route exact path="/infinite">
-                        <InfiniteQueriesPage />
+                        <InfiniteQueriesPage/>
                     </Route>
                 </Switch>
             </div>
